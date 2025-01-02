@@ -9,8 +9,10 @@ ENV TZ=Asia/Tokyo
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     wget \
-    && apt-get -y clean \
+    && apt-get install -y --no-install-recommends \
+    git \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir -U pip
-
+RUN git config --global --add safe.directory /app \
+    && pip install --no-cache-dir -U pip

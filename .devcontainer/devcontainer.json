@@ -1,0 +1,28 @@
+{
+	"name": "test",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "base",
+	"workspaceFolder": "/app",
+
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "MS-CEINTL.vscode-language-pack-ja",
+                "oderwat.indent-rainbow",
+								"esbenp.prettier-vscode",
+								"ms-python.python",
+								"donjayamanne.githistory",
+								"eamodio.gitlens",
+								"mhutchie.git-graph"
+            ],
+						"settings": {
+							"terminal.integrated.cwd": "${fileDirname}",
+							"python.defaultInterpreterPath": "/usr/local/bin/python"
+						}
+					}
+				},
+						
+	"build":{
+		"dockerfile": "dockerfile"
+	}
+}

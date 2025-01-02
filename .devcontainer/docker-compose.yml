@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  base:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    volumes:
+      - ../app:/app
+    container_name: "test"

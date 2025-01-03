@@ -7,6 +7,5 @@ services:
         dockerfile: Dockerfile
     volumes:
       - ../app:/app
-      - /home/nemu/.ssh:/.ssh
     tty: true
     container_name: "${CONTAINER_NAME}"

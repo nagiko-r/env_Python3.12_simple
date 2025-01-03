@@ -11,12 +11,11 @@ RUN apt-get update \
     sudo\
     wget \
     git \
-    openssh-client\
     bash\
+    openssh-client\
     expect\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN usermod -aG sudo root \
-    git config --global --add safe.directory /app \
+RUN git config --global --add safe.directory /app \
     && pip install --no-cache-dir -U pip

@@ -23,6 +23,6 @@
 				},
 						
 	"build":{
-		"dockerfile": "dockerfile"
+		"dockerfile": "Dockerfile"
 	}
 }

@@ -1,8 +1,11 @@
 {
-	"name": "test",
-	"dockerComposeFile": "./docker-compose.yml",
+	"name": "Python3.12_Youtube",
+	"dockerComposeFile": "docker-compose.yml",
 	"service": "base",
 	"workspaceFolder": "/app",
+	"containerEnv": {
+    "PATH": "/usr/bin:$PATH"
+	},
 
 	"customizations": {
         "vscode": {
@@ -17,12 +20,8 @@
             ],
 						"settings": {
 							"terminal.integrated.cwd": "${fileDirname}",
-							"python.defaultInterpreterPath": "/usr/local/bin/python"
+							"python.defaultInterpreterPath": "/usr/bin/python3"
 						}
 					}
-				},
-						
-	"build":{
-		"dockerfile": "Dockerfile"
-	}
+				}
 }

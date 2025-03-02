@@ -3,9 +3,17 @@ version: '3.8'
 services:
   base:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${USERNAME}
+        USER_PASSWORD: ${USER_PASSWORD}
+        ROOT_PASSWORD: ${ROOT_PASSWORD}
+    env_file:
+      - .env
     volumes:
-      - ../app:/app
+      - type: bind
+        source: ../app
+        target: /app
     tty: true
     container_name: "${CONTAINER_NAME}"

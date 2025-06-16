@@ -20,7 +20,7 @@
             ],
 						"settings": {
 							"terminal.integrated.cwd": "${fileDirname}",
-							"python.defaultInterpreterPath": "/usr/bin/python3"
+							"python.defaultInterpreterPath": "/usr/local/bin/python"
 						}
 					}
 				}

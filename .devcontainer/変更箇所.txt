@@ -1,0 +1,5 @@
+.json
+"name":"任意の名前"
+
+.env
+CONTAINER_NAME=任意の名前

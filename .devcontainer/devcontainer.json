@@ -1,27 +1,56 @@
 {
-	"name": "Python3.12_Youtube",
+	"name": "Python3.12_app",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "base",
+	"service": "Python-dev",
 	"workspaceFolder": "/app",
 	"containerEnv": {
-    "PATH": "/usr/bin:$PATH"
+		"PATH": "/usr/bin:$PATH"
 	},
 
 	"customizations": {
-        "vscode": {
-            "extensions": [
-                "MS-CEINTL.vscode-language-pack-ja",
-                "oderwat.indent-rainbow",
-								"esbenp.prettier-vscode",
-								"ms-python.python",
-								"donjayamanne.githistory",
-								"eamodio.gitlens",
-								"mhutchie.git-graph"
-            ],
-						"settings": {
-							"terminal.integrated.cwd": "${fileDirname}",
-							"python.defaultInterpreterPath": "/usr/local/bin/python"
-						}
-					}
+		"vscode": {
+			"extensions": [
+				"MS-CEINTL.vscode-language-pack-ja",
+				"oderwat.indent-rainbow",
+				"esbenp.prettier-vscode",
+				"ms-python.python",
+				"donjayamanne.githistory",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"ms-python.black-formatter",
+				"ms-python.flake8",
+				"ms-python.isort",
+				"ms-python.pylint",
+				"ms-python.debugpy"
+			],
+			"settings": {
+				"terminal.integrated.cwd": "${fileDirname}",
+				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.formatting.provider": "black",
+				"python.linting.enabled": true,
+				"python.linting.pylintEnabled": true,
+				"python.linting.flake8Enabled": true,
+				"python.sortImports.args": ["--profile", "black"],
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": true
+				},
+				"python.analysis.typeCheckingMode": "basic",
+				"python.analysis.autoImportCompletions": true,
+				"python.analysis.autoSearchPaths": true,
+				"python.analysis.diagnosticMode": "workspace",
+				"python.analysis.stubPath": "./typings",
+				"python.analysis.extraPaths": ["./src", "./lib"],
+				"python.testing.pytestEnabled": true,
+				"python.testing.unittestEnabled": false,
+				"python.testing.nosetestsEnabled": false,
+				"python.testing.pytestArgs": ["./tests"],
+				"files.associations": {
+					"*.py": "python",
+					"*.pyx": "python",
+					"*.pyi": "python"
 				}
+			}
+		}
+	}
 }
